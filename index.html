@@ -104,3 +104,13 @@ let ballSpeedX = 5;
 
     // Game Loop
     function gameLoop() {
+   draw();
+      update();
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Start Game
+    gameLoop();
+  </script>
+</body>
+</html>
