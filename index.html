@@ -74,4 +74,33 @@ let ballSpeedX = 5;
         ballSpeedX = -ballSpeedX;
       }
 
-    
+    // Ball Out of Bounds
+      if (ballX - ballSize < 0 || ballX + ballSize > canvas.width) {
+        resetBall();
+      }
+    }
+
+    // Reset Ball Position
+    function resetBall() {
+      ballX = canvas.width / 2;
+      ballY = canvas.height / 2;
+      ballSpeedX = -ballSpeedX;
+    }
+
+    // Mouse Move Handler
+    canvas.addEventListener('mousemove', function(event) {
+       const mousePos = calculateMousePos(event);
+      paddle1Y = mousePos.y - paddleHeight / 2;
+    });
+
+    // Calculate Mouse Position
+    function calculateMousePos(event) {
+      const rect = canvas.getBoundingClientRect();
+      const root = document.documentElement;
+      const mouseX = event.clientX - rect.left - root.scrollLeft;
+      const mouseY = event.clientY - rect.top - root.scrollTop;
+      return { x: mouseX, y: mouseY };
+    }
+
+    // Game Loop
+    function gameLoop() {
