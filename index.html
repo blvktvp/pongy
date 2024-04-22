@@ -44,3 +44,18 @@ let ballSpeedX = 5;
       ctx.arc(x, y, radius, 0, Math.PI * 2, false);
       ctx.fill();
     }
+
+    function draw() {
+      // Clear Canvas
+      drawRect(0, 0, canvas.width, canvas.height, 'black');
+
+      // Draw Paddles
+      drawRect(0, paddle1Y, paddleWidth, paddleHeight, 'white');
+      drawRect(canvas.width - paddleWidth, paddle2Y, paddleWidth, paddleHeight, 'white');
+
+      // Draw Ball
+      drawCircle(ballX, ballY, ballSize, 'white');
+    }
+
+    // Update Function
+    function update() {
