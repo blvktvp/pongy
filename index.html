@@ -29,3 +29,18 @@
     const ballSize = 10;
     let ballX = canvas.width / 2;
     let ballY = canvas.height / 2;
+let ballSpeedX = 5;
+    let ballSpeedY = 5;
+
+    // Draw Functions
+    function drawRect(x, y, width, height, color) {
+      ctx.fillStyle = color;
+      ctx.fillRect(x, y, width, height);
+    }
+
+    function drawCircle(x, y, radius, color) {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+      ctx.fill();
+    }
