@@ -12,3 +12,20 @@
     }
   </style>
 </head>
+</head>
+<body>
+  <canvas id="pongCanvas" width="800" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById('pongCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Paddle Variables
+    const paddleWidth = 10;
+    const paddleHeight = 100;
+    let paddle1Y = canvas.height / 2 - paddleHeight / 2;
+    let paddle2Y = canvas.height / 2 - paddleHeight / 2;
+
+    // Ball Variables
+    const ballSize = 10;
+    let ballX = canvas.width / 2;
+    let ballY = canvas.height / 2;
