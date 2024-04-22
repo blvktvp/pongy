@@ -59,3 +59,19 @@ let ballSpeedX = 5;
 
     // Update Function
     function update() {
+ // Move Ball
+      ballX += ballSpeedX;
+      ballY += ballSpeedY;
+
+      // Ball Collision with Top and Bottom Walls
+      if (ballY - ballSize < 0 || ballY + ballSize > canvas.height) {
+        ballSpeedY = -ballSpeedY;
+      }
+
+      // Ball Collision with Paddles
+      if (ballX - ballSize < paddleWidth && ballY > paddle1Y && ballY < paddle1Y + paddleHeight ||
+          ballX + ballSize > canvas.width - paddleWidth && ballY > paddle2Y && ballY < paddle2Y + paddleHeight) {
+        ballSpeedX = -ballSpeedX;
+      }
+
+    
